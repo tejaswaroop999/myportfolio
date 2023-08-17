@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal portfolio </title>
+    <link rel = "stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cb9049bc68.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Software Engineering </p>
+            <h1>Hi, I'm <span>Teja Swaroop</span></h1>
+        </div>
+    </div>
+</div>
+<!---------------about---------------->
+<div id="About" >
+    <div class = " container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello! I'm Teja Swaroop, a recent graduate in Computer Science Engineering with a passion for creating innovative solutions through technology. 
+                    I am excited to embark on my journey in the tech world, ready to learn and contribute in equal measure.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id ="skills">
+                        <ul>
+                            <li><span>Experience:</span><br>  C/C++, Python. <br></li>
+                            <li><span>Intermediate</span><br>HTML/CSS/JavaScript,<br> MYSQL,Tensorflow/Kears,<br>Data Structures and Algorithms,<br>
+                                NumPy,Pandas.</li>
+                            <li><span>Familiar</span><br> Java,<br> Reactjs.</li>
+                        </ul>850/
+                    </div>
+                    <div class="tab-contents " id = "experience">
+                        <ul>
+                            <li><span>FACE PREP | MAR 2023-MAY 2023</span><br> •Collaborating, Delivering Training Sessions.<br>•Support During Training Program.
+                                </li>
+                            <li><span>web  development</span><br>web app development</li>
+                            <li><span>app development</span><br> building </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id = "education" >
+                        <ul>
+                            <li><span>2019-2023 | CGPA 7.8/10</span><br> ANDHRA UNIVERSITY COLLEGE OF ENGINEERING<br>IN COMPUTER SCIENCE ENGINEERING(CSE)</li>
+                            <li><span>2017-2019 | CGPA 7.4/10</span><br>FITTJEE JUNIOR COLLEGE(XII)</li>
+                            <li><span>2017 | CGPA 8.4/10</span><br> KVS(X)</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------project---------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Project</h1>
+        <div class="Project-list">
+            <div>
+                <i class="fa-brands fa-html5 "></i>
+                <h2>STUDENT LOGIN PORTAL</h2>
+                <p>Developed a web-based Student Login Portal to provide students with secure
+                    access to educationalresources and information, enhancing communication and
+                    convenience within the institution.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-arrow-trend-up fa-spin"></i>
+                <h2>Comparing ML Techniques for Stock Forecasting </h2>
+                <p>Conducted an in-depth analysis on stock price forecasting using various machine
+                    learning techniques, aiming to identify the most effective approach.</p>
+                <a href="https://github.com/tejaswaroop999/MACHINE-LEARNING-TECHNIQUES-FOR-STOCK-PRICE-FORECASTING-A-COMPARATIVE-STUDY">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-gamepad fa-spin"></i>
+                <h2>Tic Tac Toe Game </h2>
+                <p> Create a command-line based Tic Tac Toe game using Python. 
+                    The game will allow two players to take turns making moves on a 3x3 
+                    grid until one player wins or the game ends in a draw</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------portfolio---------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class = "work">
+                <img src="images/work-1.png">
+                <div class = "layer">
+                    <h3>Software Development</h3>
+                    <p> Creating applications, websites, or software solutions for clients or companies.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class = "work">
+                <img src="images/work-2.png">
+                <div class = "layer">
+                    <h3>Web Development</h3>
+                    <p>Designing and building websites, web applications, and e-commerce platforms.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class = "work">
+                <img src="images/work-3.png">
+                <div class = "layer">
+                    <h3>Machine Learning</h3>
+                    <p>Building models for predictive analysis, natural language processing, or computer vision.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">see more</a>
+    </div>
+</div>
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks ){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents ){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+</body>
+</html>
