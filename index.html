@@ -12,15 +12,15 @@
     <div class="container">
         <nav>
             <img src="images/logo.png" class="logo">
-            <ul>
+            <ul id ="sidemenu">
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#About">About</a></li>
                 <li><a href="#services">Project</a></li>
                 <li><a href="#portfolio">My Work</a></li>
                 <li><a href="#contact">contact</a></li>
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
-            <i class="fa-solid fa-bars"></i>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
             <p>Software Engineering </p>
@@ -154,16 +154,18 @@
                 <a href="images/teja.pdf" download  class="btn btn2">Download Resume</a>
             </div>
             <div class="contact-right">
-            <form >
+            <form  name="submit-to-google-sheet">
                 <input type = "text" name ="Name" placeholder ="Your Name" required>
-                <input type = "email" name ="email" placeholder ="Your Email" required>
+                <input type = "email" name ="Email" placeholder ="Your Email" required>
                 <textarea name = "Message" rows ="6" placeholder ="Your Message" ></textarea>
                 <button type="submit" class="btn btn2">submit</button>
-            </form></div>
+            </form>
+            <span id ="msg">Hello</span>
+          </div>
         </div>
     </div>
     <div class="copyright">
-        <p>copyright © Teja. Made for <i class="fa-solid fa-heart"></i> carrer</p>
+        <p>2023 copyright © Teja. Made for <i class="fa-solid fa-heart"></i> carrer</p>
     </div>
 </div>
 
@@ -182,6 +184,37 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
+    <script>
+        var sidemenu =document.getElementById("sidemenu");
 
+        function openmenu(){
+            console.log("Opened");
+            sidemenu.style.right = "0";
+
+        }
+        function closemenu(){
+            console.log("closed");
+            sidemenu.style.right = "-200px";
+        
+        }
+    </script>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzSTDf7g6TNqnsLhZ8pWIlNQviXYPUGFG7UhtgAfhYa82rsoQu-H6T4Z6hlHUOZKcOlyw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
